@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.7)
 project(platformer_game)
-
 set(CMAKE_CXX_STANDARD 14)
-
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp MainGame.cpp MainGame.h)
 add_executable(platformer_game ${SOURCE_FILES})
+FIND_PACKAGE(OpenGL)
+target_link_libraries(platformer_game glut ${OPENGL_gl_LIBRARY})
